@@ -1,15 +1,41 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+//TIP
+// <b>Selection Sort</b>
+// <li>Time Complexity: <b>O(n^2)</b> for every case</li>
+// <li>Space Complexity: <b>O(1)</b>
+// <li>Characteristic</li>
+// <ul>
+// <li>unstable i.e. does not preserve the order of duplicate elements</li>
+// <li>is best when swapping is a costly operation</li>
+// </ul>
+
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
-
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
+        int[] arr = {4, 2, 1, 3};
+        SelectionSort(arr);
+        for (int num : arr) {
+            System.out.printf("%d ", num);
         }
+        System.out.println();
+    }
+
+    public static void SelectionSort(int[] arr) {
+        int n = arr.length;
+        for (int i = 0; i < n - 1; i++) {
+            int minIndex = i;
+            for (int j = i + 1; j < n; j++) {
+                if (arr[j] < arr[minIndex]) {
+                    minIndex = j;
+                }
+            }
+            if (minIndex != i) {
+                swap(arr, i, minIndex);
+            }
+        }
+    }
+
+    public static void swap(int[] arr, int i, int j) {
+        int temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
     }
 }
