@@ -1,11 +1,12 @@
-/*
-    Bubble Sort Algorithm
-    - Time Complexity : O(n^2) {Worst, Average Case}, O(n) {Best case (already sorted)}
-    - Space Complexity : since it in-place algorithm so it require O(1) additional space
-    - Characteristic
-        - Stable
-        - Adaptive (can add flag to detect if any swaps were made in a pass)
- */
+//TIP
+//    <b>Bubble Sort Algorithm</b>
+//    <li>Time Complexity : <b>O(n<sup>2</sup>)</b> {Worst, Average Case}, <b>O(n)</b> {Best case (already sorted)}</li>
+//    <li>Space Complexity : since it in-place algorithm so it require <b>O(1)< additional space</li>
+//    <li>Characteristic</li>
+//    <ul>
+//    <li>Stable</li>
+//    <li>Adaptive (can add flag to detect if any swaps were made in a pass)</li>
+//    </ul>
 
 public class Main {
     public static void main(String[] args) {
