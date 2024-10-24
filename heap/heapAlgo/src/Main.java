@@ -16,9 +16,29 @@
 //<li>We check all the children of the index which is deleted and if the Heap property is violated swap the elements and recursively check for the child.</li>
 //<li>Similar to insertion in worst case we may need to swap all the way to entire depth of the binary heap tree which is <b><i>log<sub>2</sub>N</i></b>.</li>
 //</ul>
+//
+//<b>PS. please note that this heap is a min-heap</b>
 
 public class Main {
     public static void main(String[] args) {
+        Heap h1 = new Heap();
+        int[] arr = {4, 2, 3, 1, 5, 6, 7, 8, 9};
+        int[] arr2 = {1, 2, 1, 6, 3, 4, 3};
 
+        for (int elem : arr) {
+            h1.insert(elem);
+        }
+        for (int i : h1.v) {
+            System.out.print(i + " ");
+        }
+        System.out.println();
+
+        h1.delete(0);
+        h1.delete(1);
+        for (int i : h1.v) {
+            System.out.print(i + " ");
+        }
+
+        System.out.println();
     }
 }
