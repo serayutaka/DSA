@@ -4,6 +4,18 @@ import java.util.ArrayList;
 
 public class MyMinHeap {
     ArrayList<Integer> v = new ArrayList<>();
+    int size = 6;
+
+    public boolean isEmpty() {
+        return v.isEmpty();
+    }
+    public boolean isFull() {
+        return v.size() == size;
+    }
+
+    public int top() {
+        return v.getFirst();
+    }
 
     public void insert(int value) {
         v.add(value);
@@ -11,7 +23,6 @@ public class MyMinHeap {
 
         while (curIndex != 0) {
             int parentIndex = (curIndex - 1) / 2;
-
             if (v.get(parentIndex) > v.get(curIndex)) {
                 swap(curIndex, parentIndex);
             }
@@ -28,7 +39,7 @@ public class MyMinHeap {
         heapify(0);
         return temp;
     }
-    private void heapify(int index) {
+    public void heapify(int index) {
         int leftChildIndex = 2 * index + 1;
         int rightChildIndex = 2 * index + 2;
 
