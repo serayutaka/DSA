@@ -1,9 +1,11 @@
 import java.util.ArrayList;
 
 public class Heap {
-    ArrayList<Integer> v = new ArrayList<>();
+    ArrayList<Double> v = new ArrayList<>();
 
-    void insert(int value) {
+    int getSize() { return v.size(); }
+
+    void insert(double value) {
         v.add(value);
         int curIndex = v.size() - 1;
 
@@ -18,13 +20,14 @@ public class Heap {
         }
     }
 
-    void delete(int index) {
+    double delete(int index) {
         int lastIndex = v.size() - 1;
-        int temp = v.get(index);
+        double temp = v.get(index);
         v.set(index, v.get(lastIndex));
         v.set(lastIndex, temp);
         v.remove(lastIndex);
         heapify(index);
+        return temp;
     }
     void heapify(int index) {
         int leftChildIndex = 2 * index + 1;
@@ -42,8 +45,13 @@ public class Heap {
     }
 
     void swap(int i, int j) {
-        int temp = v.get(i);
+        double temp = v.get(i);
         v.set(i, v.get(j));
         v.set(j, temp);
+    }
+
+    @Override
+    public String toString() {
+        return v.toString();
     }
 }

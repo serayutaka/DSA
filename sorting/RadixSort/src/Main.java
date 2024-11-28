@@ -15,7 +15,7 @@ public class Main {
         for (int elem : arr) {
             System.out.printf(elem + " ");
         }
-        System.out.println();
+        System.out.println()
     }
 
 
